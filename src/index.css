@@ -115,11 +115,13 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-feature-settings: "ss01", "cv11";
   }
 
   h1, h2, h3, h4 {
     @apply font-bold tracking-tight;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
 
