@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      cohort_applications: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          name: string
+          role: string
+          track: Database["public"]["Enums"]["nis2_track"]
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          role: string
+          track: Database["public"]["Enums"]["nis2_track"]
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          role?: string
+          track?: Database["public"]["Enums"]["nis2_track"]
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +49,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      nis2_track: "officer" | "director"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +176,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      nis2_track: ["officer", "director"],
+    },
   },
 } as const

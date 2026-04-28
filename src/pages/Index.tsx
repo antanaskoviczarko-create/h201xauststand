@@ -17,6 +17,7 @@ import {
 import heroBg from "@/assets/hero-bg.jpg";
 import hub201Logo from "@/assets/hub201-logo.png";
 import austrianStandardsLogo from "@/assets/austrian-standards-logo.svg";
+import ApplyForm from "@/components/ApplyForm";
 
 const Index = () => {
   return (
@@ -385,14 +386,8 @@ const Index = () => {
           <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto">
             Join the next training cohort or request detailed program information.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="xl">
-              Apply now
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-            <Button variant="heroOutline" size="xl">
-              Contact us
-            </Button>
+          <div className="max-w-3xl mx-auto">
+            <ApplyForm />
           </div>
         </div>
       </section>
