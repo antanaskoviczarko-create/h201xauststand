@@ -57,9 +57,12 @@ export const ApplyForm = () => {
     }
 
     setSubmitting(true);
-    const { error } = await supabase
-      .from("cohort_applications")
-      .insert(parsed.data);
+    const { error } = await supabase.from("cohort_applications").insert({
+      name: parsed.data.name,
+      email: parsed.data.email,
+      role: parsed.data.role,
+      track: parsed.data.track,
+    });
     setSubmitting(false);
 
     if (error) {
