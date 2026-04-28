@@ -48,7 +48,25 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-radial-red pointer-events-none" />
         <div className="container relative z-10">
-          <div className="max-w-4xl">
+          {/* Large logo lockup */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-14 mb-12">
+            <img
+              src={hub201Logo}
+              alt="Hub201"
+              className="h-20 md:h-28 w-auto brightness-0 invert"
+            />
+            <div className="hidden sm:block h-20 md:h-24 w-px bg-white/25" />
+            <img
+              src={austrianStandardsLogo}
+              alt="Austrian Standards"
+              className="h-20 md:h-28 w-auto"
+            />
+          </div>
+          <p className="text-center text-xs md:text-sm uppercase tracking-[0.25em] text-white/60 mb-12">
+            Hub201 <span className="text-brand-red mx-2">×</span> Austrian Standards
+          </p>
+
+          <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red/15 border border-brand-red/40 text-brand-red text-xs font-semibold uppercase tracking-wider mb-8">
               <ShieldCheck className="w-3.5 h-3.5" />
               Certification Preparation Program
@@ -58,13 +76,13 @@ const Index = () => {
               <br />
               <span className="text-brand-red">Preparation Program</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-light mb-4 max-w-3xl">
+            <p className="text-xl md:text-2xl text-white/90 font-light mb-4 max-w-3xl mx-auto">
               Prepare for NIS2 Officer and Director certification issued by Austrian Standards.
             </p>
-            <p className="text-base md:text-lg text-white/60 mb-10 max-w-2xl">
+            <p className="text-base md:text-lg text-white/60 mb-10 max-w-2xl mx-auto">
               Structured training designed to help you understand NIS2 requirements, prepare for the certification exam, and apply them in practice.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
               <Button variant="hero" size="xl" asChild>
                 <a href="#apply">
                   Apply for the next cohort
@@ -77,16 +95,10 @@ const Index = () => {
             </div>
 
             {/* Audit notice */}
-            <div className="inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 rounded-md bg-white/5 backdrop-blur border border-white/15">
-              <div className="flex items-center gap-3">
-                <img src={hub201Logo} alt="Hub201" className="h-8 w-auto brightness-0 invert" />
-                <div className="h-8 w-px bg-white/20" />
-                <img src={austrianStandardsLogo} alt="Austrian Standards" className="h-8 w-auto" />
-              </div>
-              <div className="text-xs text-white/70 leading-relaxed sm:border-l sm:border-white/20 sm:pl-4">
-                Training is provided by <span className="text-white font-semibold">Hub201</span>.<br />
-                Certification is issued by <span className="text-white font-semibold">Austrian Standards</span>.
-              </div>
+            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-md bg-white/5 backdrop-blur border border-white/15 text-xs text-white/70 leading-relaxed">
+              Training by <span className="text-white font-semibold">Hub201</span>
+              <span className="text-brand-red">·</span>
+              Certification by <span className="text-white font-semibold">Austrian Standards</span>
             </div>
           </div>
         </div>
