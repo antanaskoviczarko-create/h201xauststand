@@ -72,11 +72,11 @@ const Index = () => {
               <ShieldCheck className="w-3.5 h-3.5" />
               NIS2 training for certification program
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.05] mb-6">
-              NIS2 Certification
-              <br />
-              <span className="text-brand-red">Preparation Program</span>
-            </h1>
+             <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.05] mb-6">
+               Training Program for
+               <br />
+               <span className="text-brand-red">NIS2 Officer Certification</span>
+             </h1>
             <p className="text-xl md:text-2xl text-white/90 font-light mb-4 max-w-3xl mx-auto">
               Prepare for NIS2 Officer and Director certification issued by Austrian Standards.
             </p>
