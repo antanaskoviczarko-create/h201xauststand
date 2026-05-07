@@ -274,6 +274,33 @@ const Index = () => {
         </div>
       </section>
 
+      {/* LEARN MORE */}
+      <section className="py-24 bg-secondary">
+        <div className="container max-w-4xl">
+          <div className="inline-flex items-center gap-2 text-brand-red text-xs font-semibold uppercase tracking-wider mb-4">
+            <Award className="w-3.5 h-3.5" />
+            Austrian Standards
+          </div>
+          <h2 className="text-4xl md:text-5xl mb-6">Learn more about certification</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Austrian Standards is an independent and neutral certification body operating in accordance with national and international standards. Certification is conducted and issued separately by Austrian Standards.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            For more information about Austrian Standards certification, visit:
+          </p>
+          <Button variant="outline" asChild>
+            <a
+              href="https://www.austrian-standards.at/en/products-solutions/apply-standards/certification#anchor-zertifizierung-digitalisierung"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Austrian Standards Certification
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </Button>
+        </div>
+      </section>
+
       {/* WHO THIS IS FOR */}
       <section id="audience" className="py-24 bg-secondary">
         <div className="container">
