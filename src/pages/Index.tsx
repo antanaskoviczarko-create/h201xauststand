@@ -200,9 +200,9 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 text-brand-red text-xs font-semibold uppercase tracking-wider mb-4">
               <GraduationCap className="w-3.5 h-3.5" />
-              Program Tracks
+               WHO IS IT FOR? 
             </div>
-            <h2 className="text-4xl md:text-5xl">One certification path.</h2>
+             <h2 className="text-4xl md:text-5xl">For those making NIS2 work in practice.</h2>
           </div>
           <div className="grid gap-6 max-w-3xl mx-auto">
             {/* Officer */}
@@ -213,7 +213,7 @@ const Index = () => {
                   Primary Program
                 </div>
                 <h3 className="text-3xl md:text-4xl mb-2">NIS2 Officer</h3>
-                <p className="text-white/60 mb-6">4 days · ≈ 18–20 hours of guided training</p>
+                 <p className="text-white/60 mb-6">4 days · ≈ 24 hours of guided training</p>
 
                 <p className="uppercase text-xs font-semibold text-brand-red mb-3 tracking-wider">Designed for</p>
                 <ul className="space-y-2 mb-6 text-white/80">
@@ -243,7 +243,7 @@ const Index = () => {
               <Award className="w-3.5 h-3.5" />
               Certification Process
             </div>
-            <h2 className="text-4xl md:text-5xl mb-6">A structured certification path.</h2>
+             <h2 className="text-4xl md:text-5xl mb-6">A structured path from training to certification.</h2>
           </div>
 
           <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 mb-12 relative">
