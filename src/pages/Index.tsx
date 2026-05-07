@@ -281,6 +281,11 @@ const Index = () => {
             <Award className="w-3.5 h-3.5" />
             Austrian Standards
           </div>
+          <img
+            src={austrianStandardsLogo}
+            alt="Austrian Standards"
+            className="h-16 md:h-20 w-auto mb-6"
+          />
           <h2 className="text-4xl md:text-5xl mb-6">Learn more about certification</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
             Austrian Standards is an independent and neutral certification body operating in accordance with national and international standards. Certification is conducted and issued separately by Austrian Standards.
