@@ -72,10 +72,6 @@ const Index = () => {
           </p>
 
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red/15 border border-brand-red/40 text-brand-red text-xs font-semibold uppercase tracking-wider mb-8">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              NIS2 training for certification program
-            </div>
              <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.05] mb-6">
                Training Program for
                <br />
