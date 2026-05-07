@@ -311,15 +311,20 @@ const Index = () => {
         <div className="container max-w-4xl">
           <div className="inline-flex items-center gap-2 text-brand-red text-xs font-semibold uppercase tracking-wider mb-4">
             <Award className="w-3.5 h-3.5" />
-            Certification validity
+            Certification lifecycle
           </div>
-          <h2 className="text-4xl md:text-5xl mb-6">Certification validity</h2>
+          <h2 className="text-4xl md:text-5xl mb-6">Certification lifecycle</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
             Certification issued by Austrian Standards is valid for three years.
           </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Maintaining certification requires ongoing professional development, including at least 8 hours of relevant training per year.
-          </p>
+          <div className="space-y-4">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              To support continued professional development and alignment with evolving NIS2 requirements, Hub201 organizes annual update sessions in the form of webinars and seminars throughout the certification period.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              These sessions help participants stay informed about regulatory developments, implementation challenges, and emerging best practices.
+            </p>
+          </div>
         </div>
       </section>
 
