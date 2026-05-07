@@ -19,6 +19,9 @@ import hub201Logo from "@/assets/hub201-logo.png";
 import austrianStandardsLogo from "@/assets/austrian-standards-logo.svg";
 import ApplyForm from "@/components/ApplyForm";
 
+const AUSTRIAN_STANDARDS_URL =
+  "https://www.austrian-standards.at/en/products-solutions/apply-standards/certification#anchor-zertifizierung-digitalisierung";
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -64,7 +67,8 @@ const Index = () => {
             />
           </div>
           <p className="text-center text-xs md:text-sm uppercase tracking-[0.25em] text-white/60 mb-12">
-            Hub201 <span className="text-brand-red mx-2">×</span> Austrian Standards
+            Hub201 <span className="text-brand-red mx-2">×</span>{" "}
+            <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white underline-offset-4 hover:underline">Austrian Standards</a>
           </p>
 
           <div className="max-w-4xl mx-auto text-center">
@@ -78,7 +82,8 @@ const Index = () => {
                <span className="text-brand-red">NIS2 Officer Certification</span>
              </h1>
             <p className="text-xl md:text-2xl text-white/90 font-light mb-4 max-w-3xl mx-auto">
-              Prepare for NIS2 Officer and Director certification issued by Austrian Standards.
+              Prepare for NIS2 Officer and Director certification issued by{" "}
+              <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white">Austrian Standards</a>.
             </p>
             <p className="text-base md:text-lg text-white/60 mb-10 max-w-2xl mx-auto">
               Structured training designed to help you understand NIS2 requirements, prepare for the certification exam, and apply them in practice.
@@ -99,7 +104,8 @@ const Index = () => {
             <div className="inline-flex items-center gap-3 px-5 py-3 rounded-md bg-white/5 backdrop-blur border border-white/15 text-xs text-white/70 leading-relaxed">
               Training by <span className="text-white font-semibold">Hub201</span>
               <span className="text-brand-red">·</span>
-              Certification by <span className="text-white font-semibold">Austrian Standards</span>
+              Certification by{" "}
+              <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="text-white font-semibold underline-offset-4 hover:underline">Austrian Standards</a>
             </div>
           </div>
         </div>
@@ -172,7 +178,8 @@ const Index = () => {
               Program Overview
             </div>
             <h2 className="text-4xl md:text-5xl mb-6">
-              Prepares candidates for certification under <span className="text-brand-red">Austrian Standards</span>.
+              Prepares candidates for certification under{" "}
+              <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="text-brand-red underline-offset-4 hover:underline">Austrian Standards</a>.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
@@ -248,9 +255,9 @@ const Index = () => {
 
           <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 mb-12 relative">
             {[
-              { step: "01", title: "Training", by: "Hub201", icon: GraduationCap },
-              { step: "02", title: "Examination", by: "Austrian Standards", icon: ScrollText },
-              { step: "03", title: "Certification", by: "Austrian Standards", icon: Award },
+              { step: "01", title: "Training", by: "Hub201", icon: GraduationCap, href: null as string | null },
+              { step: "02", title: "Examination", by: "Austrian Standards", icon: ScrollText, href: AUSTRIAN_STANDARDS_URL },
+              { step: "03", title: "Certification", by: "Austrian Standards", icon: Award, href: AUSTRIAN_STANDARDS_URL },
             ].map((s) => (
               <div key={s.step} className="relative p-8 bg-secondary rounded-md border-t-4 border-brand-red">
                 <div className="flex items-center justify-between mb-4">
@@ -258,7 +265,14 @@ const Index = () => {
                   <s.icon className="w-6 h-6 text-brand-red" />
                 </div>
                 <h3 className="text-2xl mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground">by <span className="font-semibold text-foreground">{s.by}</span></p>
+                <p className="text-sm text-muted-foreground">
+                  by{" "}
+                  {s.href ? (
+                    <a href={s.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline-offset-4 hover:underline">{s.by}</a>
+                  ) : (
+                    <span className="font-semibold text-foreground">{s.by}</span>
+                  )}
+                </p>
               </div>
             ))}
           </div>
@@ -288,10 +302,14 @@ const Index = () => {
           />
           <h2 className="text-4xl md:text-5xl mb-6">Learn more about certification</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Austrian Standards is an independent and neutral certification body operating in accordance with national and international standards. Certification is conducted and issued separately by Austrian Standards.
+            <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:text-brand-red">Austrian Standards</a>{" "}
+            is an independent and neutral certification body operating in accordance with national and international standards. Certification is conducted and issued separately by{" "}
+            <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:text-brand-red">Austrian Standards</a>.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            For more information about Austrian Standards certification, visit:
+            For more information about{" "}
+            <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:text-brand-red">Austrian Standards</a>{" "}
+            certification, visit:
           </p>
           <Button variant="outline" asChild>
             <a
@@ -315,7 +333,9 @@ const Index = () => {
           </div>
           <h2 className="text-4xl md:text-5xl mb-6">Certification lifecycle</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Certification issued by Austrian Standards is valid for three years.
+            Certification issued by{" "}
+            <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:text-brand-red">Austrian Standards</a>{" "}
+            is valid for three years.
           </p>
           <div className="space-y-4">
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -437,7 +457,8 @@ const Index = () => {
                 <span className="text-white font-semibold">Hub201</span> provides training and preparation only.
               </p>
               <p>
-                Certification is issued by <span className="text-white font-semibold">Austrian Standards</span>.
+                Certification is issued by{" "}
+                <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="text-white font-semibold underline-offset-4 hover:underline">Austrian Standards</a>.
               </p>
             </div>
           </div>
