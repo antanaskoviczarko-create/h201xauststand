@@ -202,9 +202,9 @@ const Index = () => {
               <GraduationCap className="w-3.5 h-3.5" />
               Program Tracks
             </div>
-            <h2 className="text-4xl md:text-5xl">Two tracks. One certification path.</h2>
+            <h2 className="text-4xl md:text-5xl">One certification path.</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <div className="grid gap-6 max-w-3xl mx-auto">
             {/* Officer */}
             <Card className="p-8 md:p-10 bg-brand-black text-white border-0 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-brand-red/20 rounded-full blur-3xl" />
@@ -230,29 +230,6 @@ const Index = () => {
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Certification exam preparation</li>
                 </ul>
               </div>
-            </Card>
-
-            {/* Director */}
-            <Card className="p-8 md:p-10 border-2 relative overflow-hidden">
-              <div className="inline-block px-3 py-1 bg-foreground text-background text-xs font-bold uppercase tracking-wider rounded mb-4">
-                Executive Track
-              </div>
-              <h3 className="text-3xl md:text-4xl mb-2">NIS2 Director</h3>
-              <p className="text-muted-foreground mb-6">1 day · ≈ 6–8 hours</p>
-
-              <p className="uppercase text-xs font-semibold text-brand-red mb-3 tracking-wider">Designed for</p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Executives</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Board members</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Decision-makers</li>
-              </ul>
-
-              <p className="uppercase text-xs font-semibold text-brand-red mb-3 tracking-wider">Focus</p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Governance</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Responsibility</li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Oversight</li>
-              </ul>
             </Card>
           </div>
         </div>
