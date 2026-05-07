@@ -306,6 +306,23 @@ const Index = () => {
         </div>
       </section>
 
+      {/* CERTIFICATION VALIDITY */}
+      <section className="py-24">
+        <div className="container max-w-4xl">
+          <div className="inline-flex items-center gap-2 text-brand-red text-xs font-semibold uppercase tracking-wider mb-4">
+            <Award className="w-3.5 h-3.5" />
+            Certification validity
+          </div>
+          <h2 className="text-4xl md:text-5xl mb-6">Certification validity</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Certification issued by Austrian Standards is valid for three years.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Maintaining certification requires ongoing professional development, including at least 8 hours of relevant training per year.
+          </p>
+        </div>
+      </section>
+
       {/* WHO THIS IS FOR */}
       <section id="audience" className="py-24 bg-secondary">
         <div className="container">
