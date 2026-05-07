@@ -78,7 +78,7 @@ const Index = () => {
                <span className="text-brand-red">NIS2 Officer Certification</span>
              </h1>
             <p className="text-xl md:text-2xl text-white/90 font-light mb-4 max-w-3xl mx-auto">
-              Prepare for NIS2 Officer and Director certification issued by{" "}
+              Prepare for NIS2 Officer certification issued by{" "}
               <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white">Austrian Standards</a>.
             </p>
             <p className="text-base md:text-lg text-white/60 mb-10 max-w-2xl mx-auto">
