@@ -3,7 +3,6 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
@@ -17,9 +16,6 @@ const applicationSchema = z.object({
     .max(320, "Email is too long")
     .email("Please enter a valid email address"),
   role: z.string().trim().min(1, "Role is required").max(200, "Role is too long"),
-  track: z.enum(["officer", "director"], {
-    required_error: "Please select a track",
-  }),
 });
 
 type FormErrors = Partial<Record<keyof z.infer<typeof applicationSchema>, string>>;
@@ -33,7 +29,6 @@ export const ApplyForm = () => {
     name: "",
     email: "",
     role: "",
-    track: "" as "" | "officer" | "director",
   });
 
   const update = (key: keyof typeof form, value: string) => {
@@ -61,7 +56,7 @@ export const ApplyForm = () => {
       name: parsed.data.name,
       email: parsed.data.email,
       role: parsed.data.role,
-      track: parsed.data.track,
+      track: "officer",
     });
     setSubmitting(false);
 
@@ -79,7 +74,7 @@ export const ApplyForm = () => {
       title: "Application received",
       description: "Thank you. We will be in touch shortly.",
     });
-    setForm({ name: "", email: "", role: "", track: "" });
+    setForm({ name: "", email: "", role: "" });
   };
 
   if (submitted) {
@@ -148,53 +143,6 @@ export const ApplyForm = () => {
           aria-invalid={!!errors.role}
         />
         {errors.role && <p className="text-sm text-brand-red">{errors.role}</p>}
-      </div>
-
-      <div className="space-y-3">
-        <Label className="text-white">Selected track</Label>
-        <RadioGroup
-          value={form.track}
-          onValueChange={(value) => update("track", value)}
-          className="grid sm:grid-cols-2 gap-3"
-        >
-          <label
-            htmlFor="track-officer"
-            className={`flex items-start gap-3 p-4 rounded-md border-2 cursor-pointer transition-smooth ${
-              form.track === "officer"
-                ? "border-brand-red bg-brand-red/10"
-                : "border-white/15 bg-white/5 hover:border-white/30"
-            }`}
-          >
-            <RadioGroupItem
-              value="officer"
-              id="track-officer"
-              className="mt-1 border-white/40 text-brand-red"
-            />
-            <div>
-              <p className="font-semibold text-white">NIS2 Officer</p>
-              <p className="text-xs text-white/60 mt-0.5">4 days · ≈ 18–20 hours</p>
-            </div>
-          </label>
-          <label
-            htmlFor="track-director"
-            className={`flex items-start gap-3 p-4 rounded-md border-2 cursor-pointer transition-smooth ${
-              form.track === "director"
-                ? "border-brand-red bg-brand-red/10"
-                : "border-white/15 bg-white/5 hover:border-white/30"
-            }`}
-          >
-            <RadioGroupItem
-              value="director"
-              id="track-director"
-              className="mt-1 border-white/40 text-brand-red"
-            />
-            <div>
-              <p className="font-semibold text-white">NIS2 Director</p>
-              <p className="text-xs text-white/60 mt-0.5">1 day · ≈ 6–8 hours</p>
-            </div>
-          </label>
-        </RadioGroup>
-        {errors.track && <p className="text-sm text-brand-red">{errors.track}</p>}
       </div>
 
       <div className="pt-2">
