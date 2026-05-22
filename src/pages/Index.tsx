@@ -237,10 +237,14 @@ const Index = () => {
                   </div>
                   <div className="rounded-lg border border-white/15 bg-white/5 p-5">
                     <p className="uppercase text-xs font-semibold text-brand-red mb-3 tracking-wider">What you get</p>
-                    <ul className="space-y-2 text-white/90">
-                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />4 days of training</li>
-                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />6 hours per day</li>
-                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Exam simulation with real exam questions</li>
+                    <ul className="space-y-2 text-white/90 text-sm">
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />4-day intensive certification preparation program</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />6 instructional hours per training day</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Serbian-language training delivery</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Continuous Serbian / English terminology alignment</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Governance, risk management, and operational resilience focus</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Certification-style exam simulations</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Online certification exam conducted by Austrian Standards</li>
                     </ul>
                   </div>
                 </div>
