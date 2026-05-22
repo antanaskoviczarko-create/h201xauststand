@@ -225,13 +225,25 @@ const Index = () => {
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Compliance and risk roles</li>
                 </ul>
 
-                <p className="uppercase text-xs font-semibold text-brand-red mb-3 tracking-wider">Focus</p>
-                <ul className="space-y-2 text-white/80">
-                  <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Implementation of NIS2 requirements</li>
-                  <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Risk management</li>
-                  <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Incident reporting</li>
-                  <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Certification exam preparation</li>
-                </ul>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="uppercase text-xs font-semibold text-brand-red mb-3 tracking-wider">Focus</p>
+                    <ul className="space-y-2 text-white/80">
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Implementation of NIS2 requirements</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Risk management</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Incident reporting</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Certification exam preparation</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-lg border border-white/15 bg-white/5 p-5">
+                    <p className="uppercase text-xs font-semibold text-brand-red mb-3 tracking-wider">What you get</p>
+                    <ul className="space-y-2 text-white/90">
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />4 days of training</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />6 hours per day</li>
+                      <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Exam simulation with real exam questions</li>
+                    </ul>
+                  </div>
+                </div>
 
                 <div className="mt-8 pt-6 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-3 flex-wrap">
