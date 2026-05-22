@@ -251,16 +251,16 @@ const Index = () => {
 
                 <div className="mt-8 pt-6 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-3 flex-wrap">
-                    <span className="px-2 py-1 bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider rounded">−20%</span>
-                    <span className="text-5xl font-extrabold text-white leading-none">€1.600</span>
-                    <span className="text-2xl text-white/50 line-through leading-none">€2.000</span>
+                    <span className="px-2.5 py-1 bg-brand-red text-white text-sm font-bold uppercase tracking-wider rounded">−20%</span>
+                    <span className="text-5xl font-extrabold text-white/50 line-through leading-none">€2.000</span>
+                    <span className="text-3xl font-extrabold text-white leading-none">€1.600</span>
                   </div>
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-red text-white rounded-full text-xs font-bold uppercase tracking-wider">
                     <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                     Only 12 spots
                   </div>
                 </div>
-                <p className="text-xs text-brand-red font-bold mt-3 uppercase tracking-wider">Discount for first cohort</p>
+                <p className="text-base text-brand-red font-bold mt-3 uppercase tracking-wider">Discount for first cohort</p>
               </div>
             </Card>
           </div>
