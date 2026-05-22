@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   ShieldCheck,
   AlertTriangle,
   FileCheck,
@@ -465,6 +471,80 @@ const Index = () => {
           <div className="max-w-3xl mx-auto">
             <ApplyForm />
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 bg-background">
+        <div className="container max-w-3xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 border border-brand-red/30 bg-brand-red/5 text-brand-red text-xs font-semibold uppercase tracking-wider rounded-sm">
+              FAQ
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Frequently asked <span className="text-brand-red">questions</span>
+            </h2>
+            <p className="text-muted-foreground">
+              Everything you need to know about the NIS2 Officer Certification Preparation Program.
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {[
+              {
+                q: "What is the NIS2 Officer Certification Preparation Program?",
+                a: "The program is a four-day intensive onsite training designed to prepare participants for the Austrian Standards NIS2 Officer certification exam while developing practical understanding of governance, risk management, and operational resilience concepts.",
+              },
+              {
+                q: "How long does the training last?",
+                a: "The program lasts 4 training days, with 6 instructional hours per day.",
+              },
+              {
+                q: "In which language is the training delivered?",
+                a: "The training is delivered in Serbian, with continuous Serbian / English terminology alignment to prepare participants for the English-language certification exam. The official certification exam is conducted in English.",
+              },
+              {
+                q: "Is the training onsite or online?",
+                a: "The training is delivered onsite. Hybrid options may be available depending on organizational requirements.",
+              },
+              {
+                q: "Is the certification exam included?",
+                a: "The training includes full certification preparation, mock questions, and exam simulations. The official certification exam is conducted separately by Austrian Standards.",
+              },
+              {
+                q: "How is the certification exam conducted?",
+                a: "The official certification exam is conducted online and individually. Participants schedule their own exam session directly with Austrian Standards. Hub201 may also organize group exam sessions at arranged dates and times for participating cohorts.",
+              },
+              {
+                q: "Who issues the certification?",
+                a: "The certification is issued exclusively by Austrian Standards upon successful completion of the exam.",
+              },
+              {
+                q: "What is Austrian Standards?",
+                a: "Austrian Standards is Austria's national standards organization and one of the leading certification and standardization institutions in the region. The organization is internationally recognized for its work in standardization, governance, compliance, and professional certification programs. The NIS2 Officer certification is designed around European regulatory and governance principles and carries strong professional relevance for organizations working on cybersecurity governance, resilience, and regulatory readiness initiatives.",
+              },
+              {
+                q: "Does Hub201 issue the certificate?",
+                a: "No. Hub201 delivers the preparation training program, while Austrian Standards acts as the independent certification body responsible for examination and certification issuance.",
+              },
+              {
+                q: "Is prior technical cybersecurity experience required?",
+                a: "No advanced technical background is required. The program focuses primarily on governance, risk management, resilience, and organizational cybersecurity responsibilities.",
+              },
+              {
+                q: "What happens after completing the training?",
+                a: "After completing the training, participants may independently schedule the official certification exam with Austrian Standards. Successful candidates receive the official NIS2 Officer certification.",
+              },
+            ].map((item, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="border-border">
+                <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:text-brand-red hover:no-underline">
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed text-base">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
