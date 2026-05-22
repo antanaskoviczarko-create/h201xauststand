@@ -233,19 +233,18 @@ const Index = () => {
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-brand-red mt-1 shrink-0" />Certification exam preparation</li>
                 </ul>
 
-                <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-end justify-between gap-4">
-                  <div>
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-4xl md:text-5xl font-bold text-white">€1.600</span>
-                      <span className="text-xl text-white/40 line-through">€2.000</span>
-                    </div>
-                    <p className="text-sm text-brand-red font-semibold mt-2 uppercase tracking-wider">Discount for first cohort</p>
+                <div className="mt-8 pt-6 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <span className="px-2 py-1 bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider rounded">−20%</span>
+                    <span className="text-5xl font-extrabold text-white leading-none">€1.600</span>
+                    <span className="text-2xl text-white/50 line-through leading-none">€2.000</span>
                   </div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full text-xs font-semibold text-white">
-                    <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-                    12 spots available
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-red text-white rounded-full text-xs font-bold uppercase tracking-wider">
+                    <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                    Only 12 spots
                   </div>
                 </div>
+                <p className="text-xs text-brand-red font-bold mt-3 uppercase tracking-wider">Discount for first cohort</p>
               </div>
             </Card>
           </div>
