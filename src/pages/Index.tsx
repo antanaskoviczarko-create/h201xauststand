@@ -209,7 +209,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 text-brand-red text-xs font-semibold uppercase tracking-wider mb-4">
               <GraduationCap className="w-3.5 h-3.5" />
-               WHO IS IT FOR? 
+               PRICING
             </div>
              <h2 className="text-4xl md:text-5xl">For those making NIS2 work in practice.</h2>
           </div>
