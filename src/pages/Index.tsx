@@ -39,7 +39,7 @@ const Index = () => {
             <a href="#program" className="hover:text-white transition-smooth">Program</a>
             <a href="#tracks" className="hover:text-white transition-smooth">Tracks</a>
             <a href="#certification" className="hover:text-white transition-smooth">Certification</a>
-            <a href="#audience" className="hover:text-white transition-smooth">Pricing</a>
+            <a href="#tracks" className="hover:text-white transition-smooth">Pricing</a>
           </nav>
           <Button variant="hero" size="sm" asChild>
             <a href="#apply">Apply</a>
