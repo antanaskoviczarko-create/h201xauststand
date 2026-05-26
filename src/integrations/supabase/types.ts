@@ -16,26 +16,41 @@ export type Database = {
     Tables: {
       cohort_applications: {
         Row: {
+          company: string | null
           created_at: string
+          eligibility_confirmed: boolean
           email: string
+          heard_from: string[]
+          heard_from_other: string | null
           id: string
           name: string
+          referral_name: string | null
           role: string
           track: Database["public"]["Enums"]["nis2_track"]
         }
         Insert: {
+          company?: string | null
           created_at?: string
+          eligibility_confirmed?: boolean
           email: string
+          heard_from?: string[]
+          heard_from_other?: string | null
           id?: string
           name: string
+          referral_name?: string | null
           role: string
           track: Database["public"]["Enums"]["nis2_track"]
         }
         Update: {
+          company?: string | null
           created_at?: string
+          eligibility_confirmed?: boolean
           email?: string
+          heard_from?: string[]
+          heard_from_other?: string | null
           id?: string
           name?: string
+          referral_name?: string | null
           role?: string
           track?: Database["public"]["Enums"]["nis2_track"]
         }
