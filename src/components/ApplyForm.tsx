@@ -8,7 +8,13 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 
-const HEARD_OPTIONS = ["LinkedIn", "Instagram", "Referral", "A&S Adria", "Other"] as const;
+const HEARD_OPTIONS = [
+  "LinkedIn",
+  "Instagram",
+  "Referral (please specify the name of the person who referred you)",
+  "A&S Adria",
+  "Other (please specify)",
+] as const;
 
 const applicationSchema = z
   .object({
@@ -29,14 +35,14 @@ const applicationSchema = z
     heardFromOther: z.string().trim().max(500).optional(),
   })
   .superRefine((data, ctx) => {
-    if (data.heardFrom.includes("Referral") && !data.referralName?.trim()) {
+    if (data.heardFrom.some((o) => o.startsWith("Referral")) && !data.referralName?.trim()) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         path: ["referralName"],
         message: "Please name the person who referred you",
       });
     }
-    if (data.heardFrom.includes("Other") && !data.heardFromOther?.trim()) {
+    if (data.heardFrom.some((o) => o.startsWith("Other")) && !data.heardFromOther?.trim()) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         path: ["heardFromOther"],
@@ -101,10 +107,10 @@ export const ApplyForm = () => {
       company: parsed.data.company,
       eligibility_confirmed: parsed.data.eligibility,
       heard_from: parsed.data.heardFrom,
-      referral_name: parsed.data.heardFrom.includes("Referral")
+      referral_name: parsed.data.heardFrom.some((o) => o.startsWith("Referral"))
         ? parsed.data.referralName ?? null
         : null,
-      heard_from_other: parsed.data.heardFrom.includes("Other")
+      heard_from_other: parsed.data.heardFrom.some((o) => o.startsWith("Other"))
         ? parsed.data.heardFromOther ?? null
         : null,
       track: "officer",
@@ -257,7 +263,7 @@ export const ApplyForm = () => {
                   {option}
                 </Label>
               </div>
-              {option === "Referral" && form.heardFrom.includes("Referral") && (
+              {option.startsWith("Referral") && form.heardFrom.includes(option) && (
                 <div className="pl-7 space-y-1">
                   <Input
                     value={form.referralName}
@@ -272,7 +278,7 @@ export const ApplyForm = () => {
                   )}
                 </div>
               )}
-              {option === "Other" && form.heardFrom.includes("Other") && (
+              {option.startsWith("Other") && form.heardFrom.includes(option) && (
                 <div className="pl-7 space-y-1">
                   <Input
                     value={form.heardFromOther}
