@@ -200,6 +200,16 @@ const Index = () => {
               </Card>
             ))}
           </div>
+          <div className="max-w-4xl mx-auto mt-12">
+            <Card className="p-7 border-2 border-brand-red/30 bg-secondary/40">
+              <div className="text-brand-red text-xs font-semibold uppercase tracking-wider mb-3">
+                Eligibility Requirement
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                To attend the training and qualify for the certification exam, participants are required to provide proof of at least two years of professional experience in the field of network and information security (legal, organizational, or technical), or evidence of relevant vocational training (e.g. technical college), or a university degree.
+              </p>
+            </Card>
+          </div>
         </div>
       </section>
 
