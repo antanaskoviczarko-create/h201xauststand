@@ -8,7 +8,13 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 
-const HEARD_OPTIONS = ["LinkedIn", "Instagram", "Referral", "A&S Adria", "Other"] as const;
+const HEARD_OPTIONS = [
+  "LinkedIn",
+  "Instagram",
+  "Referral (please specify the name of the person who referred you)",
+  "A&S Adria",
+  "Other (please specify)",
+] as const;
 
 const applicationSchema = z
   .object({
@@ -257,7 +263,7 @@ export const ApplyForm = () => {
                   {option}
                 </Label>
               </div>
-              {option === "Referral" && form.heardFrom.includes("Referral") && (
+              {option.startsWith("Referral") && form.heardFrom.includes(option) && (
                 <div className="pl-7 space-y-1">
                   <Input
                     value={form.referralName}
@@ -272,7 +278,7 @@ export const ApplyForm = () => {
                   )}
                 </div>
               )}
-              {option === "Other" && form.heardFrom.includes("Other") && (
+              {option.startsWith("Other") && form.heardFrom.includes(option) && (
                 <div className="pl-7 space-y-1">
                   <Input
                     value={form.heardFromOther}
