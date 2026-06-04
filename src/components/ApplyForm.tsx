@@ -27,6 +27,7 @@ const applicationSchema = z
       .email("Please enter a valid email address"),
     role: z.string().trim().min(1, "Role is required").max(200, "Role is too long"),
     company: z.string().trim().min(1, "Company is required").max(200, "Company is too long"),
+    phone: z.string().trim().min(1, "Mobile phone is required").max(50, "Phone is too long"),
     eligibility: z.literal(true, {
       errorMap: () => ({ message: "You must confirm eligibility to apply" }),
     }),
@@ -63,6 +64,7 @@ export const ApplyForm = () => {
     email: "",
     role: "",
     company: "",
+    phone: "",
     eligibility: false,
     heardFrom: [] as string[],
     referralName: "",
@@ -105,6 +107,7 @@ export const ApplyForm = () => {
       email: parsed.data.email,
       role: parsed.data.role,
       company: parsed.data.company,
+      phone: parsed.data.phone,
       eligibility_confirmed: parsed.data.eligibility,
       heard_from: parsed.data.heardFrom,
       referral_name: parsed.data.heardFrom.some((o) => o.startsWith("Referral"))
@@ -136,6 +139,7 @@ export const ApplyForm = () => {
       email: "",
       role: "",
       company: "",
+      phone: "",
       eligibility: false,
       heardFrom: [],
       referralName: "",
@@ -195,6 +199,21 @@ export const ApplyForm = () => {
           />
           {errors.email && <p className="text-sm text-brand-red">{errors.email}</p>}
         </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="phone" className="text-white">Mobile phone</Label>
+        <Input
+          id="phone"
+          type="tel"
+          value={form.phone}
+          onChange={(e) => update("phone", e.target.value)}
+          placeholder="+43 123 456789"
+          maxLength={50}
+          className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus-visible:ring-brand-red"
+          aria-invalid={!!errors.phone}
+        />
+        {errors.phone && <p className="text-sm text-brand-red">{errors.phone}</p>}
       </div>
 
       <div className="space-y-2">

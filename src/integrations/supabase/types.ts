@@ -24,6 +24,7 @@ export type Database = {
           heard_from_other: string | null
           id: string
           name: string
+          phone: string | null
           referral_name: string | null
           role: string
           track: Database["public"]["Enums"]["nis2_track"]
@@ -37,6 +38,7 @@ export type Database = {
           heard_from_other?: string | null
           id?: string
           name: string
+          phone?: string | null
           referral_name?: string | null
           role: string
           track: Database["public"]["Enums"]["nis2_track"]
@@ -50,6 +52,7 @@ export type Database = {
           heard_from_other?: string | null
           id?: string
           name?: string
+          phone?: string | null
           referral_name?: string | null
           role?: string
           track?: Database["public"]["Enums"]["nis2_track"]
