@@ -24,6 +24,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import hub201Logo from "@/assets/hub201-logo.png";
 import austrianStandardsLogo from "@/assets/austrian-standards-logo.svg";
 import ApplyForm from "@/components/ApplyForm";
+import Curriculum from "@/components/Curriculum";
 
 const AUSTRIAN_STANDARDS_URL =
   "https://www.austrian-standards.at/en/products-solutions/apply-standards/certification#anchor-zertifizierung-digitalisierung";
@@ -38,6 +39,7 @@ const Index = () => {
           <nav className="hidden md:flex items-center gap-8 text-sm text-white/80">
             <a href="#program" className="hover:text-white transition-smooth">Program</a>
             <a href="#tracks" className="hover:text-white transition-smooth">Tracks</a>
+            <a href="#curriculum" className="hover:text-white transition-smooth">Curriculum</a>
             <a href="#certification" className="hover:text-white transition-smooth">Certification</a>
             <a href="#tracks" className="hover:text-white transition-smooth">Pricing</a>
           </nav>
