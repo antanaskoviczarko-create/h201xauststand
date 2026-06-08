@@ -474,6 +474,8 @@ const Index = () => {
         </div>
       </section>
 
+      <Curriculum />
+
       {/* FINAL CTA */}
       <section
         id="apply"
