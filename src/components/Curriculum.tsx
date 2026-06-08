@@ -1,4 +1,8 @@
 import { Calendar, Clock, User, BookOpen } from "lucide-react";
+import nikolaAsset from "@/assets/nikola-budanovic.jpeg.asset.json";
+import aleksandarAsset from "@/assets/aleksandar-mastilovic.jpg.asset.json";
+import nenadAsset from "@/assets/nenad-nikolovski.png.asset.json";
+import ivanAsset from "@/assets/ivan-barac.jpg.asset.json";
 
 type Block = {
   block: string;
@@ -96,6 +100,7 @@ const INSTRUCTORS = [
   {
     name: "Nikola Budanović",
     initials: "NB",
+    photo: nikolaAsset.url,
     role: "Program Author",
     assignment: "Day 1 (intro) + Day 4",
     bio: "Nikola Budanović is the author of the program and one of the leaders of Hub201's educational initiatives in cybersecurity, NIS2 compliance and digital resilience. His experience combines research, communication and strategic work across the cybersecurity ecosystem – from curriculum and program development to cooperation with the public sector, industry and the professional community. Within the NIS2 Officer training, Nikola leads the opening part of Day 1 and the final day of the program, focusing on understanding NIS2 logic, the governance approach, the audit mindset, scenario-based interpretation of questions and preparing participants for the certification exam.",
@@ -103,6 +108,7 @@ const INSTRUCTORS = [
   {
     name: "Aleksandar Mastilović",
     initials: "AM",
+    photo: aleksandarAsset.url,
     role: "Digital Transformation · Regulatory Context",
     assignment: "Regulatory and institutional context",
     bio: "Aleksandar Mastilović is an expert in digital transformation, telecommunications and the development of modern technological ecosystems. His interdisciplinary experience covers the implementation of 5G technologies, telecom market analysis, smart city concept development, and digital transformation projects in public administration and SMEs. Within the NIS2 Officer training, Aleksandar contributes to the understanding of the regulatory, institutional and organizational context of digital security, with a particular focus on the application of European rules, change management, and practical challenges of aligning organizations with new digital resilience requirements.",
@@ -110,6 +116,7 @@ const INSTRUCTORS = [
   {
     name: "Ivan Barać",
     initials: "IB",
+    photo: ivanAsset.url,
     role: "Engineering Development Lead | PULSEC",
     assignment: "Day 2",
     bio: "Ivan Barać is a cybersecurity expert with more than 20 years of experience in the field, acquired through work in large public and private systems and through implementing a wide range of cybersecurity projects. He serves as Engineering Development Lead at PULSEC and as the head of the PULSEC CyberLab internship program, which trains new talent in cybersecurity. Within the company he focuses on engineering career development in the Engineering Division, including education, certification and career guidance. Within the NIS2 Officer training, Ivan leads Day 2, with the task of bringing security controls derived from NIS2 requirements closer to participants and explaining them clearly.",
@@ -117,6 +124,7 @@ const INSTRUCTORS = [
   {
     name: "Nenad Nikolovski",
     initials: "NN",
+    photo: nenadAsset.url,
     role: "IT and Engineering Consultant",
     assignment: "Day 3",
     bio: "Nenad Nikolovski is an IT and engineering consultant with more than 20 years of experience in the IT industry. Throughout his career he has covered different levels of IT management – from technical and operational roles to leading teams and managing complex processes. He has significant experience working with incident response teams and managing real-world incidents, ranging from everyday operational issues to large-scale incidents. Within the NIS2 Officer training, Nenad leads Day 3, dedicated to incident response, operational resilience, business continuity and the practical management of crisis situations.",
@@ -232,9 +240,18 @@ const Curriculum = () => {
           {INSTRUCTORS.map((p) => (
             <div key={p.name} className="bg-white/[0.03] border border-white/10 rounded-lg p-6 md:p-8 hover:border-brand-red/40 transition-colors">
               <div className="flex items-start gap-5 mb-5">
-                <div className="w-20 h-20 shrink-0 rounded-full bg-gradient-to-br from-brand-red/30 to-brand-red/5 border-2 border-brand-red/50 flex items-center justify-center text-2xl font-bold text-white">
-                  {p.initials}
-                </div>
+                {p.photo ? (
+                  <img
+                    src={p.photo}
+                    alt={p.name}
+                    className="w-20 h-20 shrink-0 rounded-full object-cover border-2 border-brand-red/50"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-20 h-20 shrink-0 rounded-full bg-gradient-to-br from-brand-red/30 to-brand-red/5 border-2 border-brand-red/50 flex items-center justify-center text-2xl font-bold text-white">
+                    {p.initials}
+                  </div>
+                )}
                 <div className="min-w-0">
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{p.name}</h3>
                   <p className="text-brand-red text-sm font-semibold mb-1">{p.role}</p>
