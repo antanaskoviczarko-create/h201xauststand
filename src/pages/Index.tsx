@@ -98,7 +98,7 @@ const Index = () => {
                 </a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <a href="#apply">Request program details</a>
+                <a href="mailto:nis2@hub-201.com?subject=QUESTION%20about%20program">Request program details</a>
               </Button>
             </div>
 
