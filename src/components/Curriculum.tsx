@@ -169,15 +169,19 @@ const Curriculum = () => {
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{day.title}</h3>
                     <p className="text-white/60 text-sm md:text-base">{day.subtitle}</p>
                   </div>
-                  <div className="flex items-center gap-3 shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red font-bold">
+                  <a
+                    href={`#instructor-${day.initials}`}
+                    className="flex items-center gap-3 shrink-0 group hover:text-brand-red transition-colors"
+                    aria-label={`See bio for ${day.instructor}`}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red font-bold group-hover:bg-brand-red/30">
                       {day.initials}
                     </div>
                     <div className="text-sm">
                       <div className="text-white/50 text-xs uppercase tracking-wider">Lecturer</div>
-                      <div className="text-white font-medium">{day.instructor}</div>
+                      <div className="text-white font-medium group-hover:text-brand-red group-hover:underline underline-offset-4">{day.instructor}</div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
               <div className="overflow-x-auto">
@@ -238,7 +242,11 @@ const Curriculum = () => {
 
         <div className="grid md:grid-cols-2 gap-6">
           {INSTRUCTORS.map((p) => (
-            <div key={p.name} className="bg-white/[0.03] border border-white/10 rounded-lg p-6 md:p-8 hover:border-brand-red/40 transition-colors">
+            <div
+              key={p.name}
+              id={`instructor-${p.initials}`}
+              className="scroll-mt-24 bg-white/[0.03] border border-white/10 rounded-lg p-6 md:p-8 hover:border-brand-red/40 transition-colors"
+            >
               <div className="flex items-start gap-5 mb-5">
                 {p.photo ? (
                   <img
