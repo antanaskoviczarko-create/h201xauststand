@@ -27,7 +27,7 @@ import ApplyForm from "@/components/ApplyForm";
 import Curriculum from "@/components/Curriculum";
 
 const AUSTRIAN_STANDARDS_URL =
-  "https://www.austrian-standards.at/en/products-solutions/apply-standards/certification#anchor-zertifizierung-digitalisierung";
+  "https://www.austrian-standards.at/en/products-solutions/apply-standards/certification/personal-certification/nis2-officer";
 
 const Index = () => {
   return (
@@ -68,11 +68,13 @@ const Index = () => {
               className="h-20 md:h-28 w-auto brightness-0 invert"
             />
             <div className="hidden sm:block h-20 md:h-24 w-px bg-white/25" />
-            <img
-              src={austrianStandardsLogo}
-              alt="Austrian Standards"
-              className="h-20 md:h-28 w-auto"
-            />
+            <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" aria-label="Austrian Standards">
+              <img
+                src={austrianStandardsLogo}
+                alt="Austrian Standards"
+                className="h-20 md:h-28 w-auto"
+              />
+            </a>
           </div>
           <p className="text-center text-xs md:text-sm uppercase tracking-[0.25em] text-white/60 mb-12">
             Hub201 <span className="text-brand-red mx-2">×</span>{" "}
@@ -345,15 +347,17 @@ const Index = () => {
       {/* LEARN MORE */}
       <section className="py-24 bg-secondary">
         <div className="container max-w-4xl">
-          <div className="inline-flex items-center gap-2 text-brand-red text-xs font-semibold uppercase tracking-wider mb-4">
+          <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-brand-red text-xs font-semibold uppercase tracking-wider mb-4 hover:underline">
             <Award className="w-3.5 h-3.5" />
             Austrian Standards
-          </div>
-          <img
-            src={austrianStandardsLogo}
-            alt="Austrian Standards"
-            className="h-16 md:h-20 w-auto mb-6"
-          />
+          </a>
+          <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" aria-label="Austrian Standards" className="block mb-6">
+            <img
+              src={austrianStandardsLogo}
+              alt="Austrian Standards"
+              className="h-16 md:h-20 w-auto"
+            />
+          </a>
           <h2 className="text-4xl md:text-5xl mb-6">Learn more about certification</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
             <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:text-brand-red">Austrian Standards</a>{" "}
@@ -367,7 +371,7 @@ const Index = () => {
           </p>
           <Button variant="outline" asChild>
             <a
-              href="https://www.austrian-standards.at/en/products-solutions/apply-standards/certification#anchor-zertifizierung-digitalisierung"
+              href={AUSTRIAN_STANDARDS_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -580,7 +584,9 @@ const Index = () => {
             <div className="flex items-center gap-6">
               <img src={hub201Logo} alt="Hub201" className="h-10 w-auto brightness-0 invert" />
               <div className="h-10 w-px bg-white/20" />
-              <img src={austrianStandardsLogo} alt="Austrian Standards" className="h-10 w-auto" />
+              <a href={AUSTRIAN_STANDARDS_URL} target="_blank" rel="noopener noreferrer" aria-label="Austrian Standards">
+                <img src={austrianStandardsLogo} alt="Austrian Standards" className="h-10 w-auto" />
+              </a>
             </div>
             <div className="md:text-right text-sm text-white/70 leading-relaxed">
               <p>
