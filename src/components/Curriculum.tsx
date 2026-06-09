@@ -1,8 +1,4 @@
 import { Calendar, Clock, User, BookOpen } from "lucide-react";
-import nikolaAsset from "@/assets/nikola-budanovic.jpeg.asset.json";
-import aleksandarAsset from "@/assets/aleksandar-mastilovic.jpg.asset.json";
-import nenadAsset from "@/assets/nenad-nikolovski.png.asset.json";
-import ivanAsset from "@/assets/ivan-barac.jpg.asset.json";
 
 type Block = {
   block: string;
@@ -19,6 +15,13 @@ type Day = {
   instructor: string;
   initials: string;
   blocks: Block[];
+};
+
+const INSTRUCTOR_PHOTOS = {
+  nikola: "/__l5e/assets-v1/b5aa61c2-64b7-4910-8d16-0631778c7cdb/nikola-budanovic.jpeg",
+  aleksandar: "/__l5e/assets-v1/1226afda-62d2-4c8c-b47c-f8a178a2dc6a/aleksandar-mastilovic.jpg",
+  ivan: "/__l5e/assets-v1/73f076a2-5c03-4f70-8dea-25e7b94a9490/ivan-barac.jpg",
+  nenad: "/__l5e/assets-v1/bf895a77-4dca-4119-bb0b-45faddb5edf1/nenad-nikolovski.png",
 };
 
 const DAYS: Day[] = [
@@ -100,7 +103,7 @@ const INSTRUCTORS = [
   {
     name: "Nikola Budanović",
     initials: "NB",
-    photo: nikolaAsset.url,
+    photo: INSTRUCTOR_PHOTOS.nikola,
     role: "Program Author",
     assignment: "Day 1 (intro) + Day 4",
     bio: "Nikola Budanović is the author of the program and one of the leaders of Hub201's educational initiatives in cybersecurity, NIS2 compliance and digital resilience. His experience combines research, communication and strategic work across the cybersecurity ecosystem – from curriculum and program development to cooperation with the public sector, industry and the professional community. Within the NIS2 Officer training, Nikola leads the opening part of Day 1 and the final day of the program, focusing on understanding NIS2 logic, the governance approach, the audit mindset, scenario-based interpretation of questions and preparing participants for the certification exam.",
@@ -108,7 +111,7 @@ const INSTRUCTORS = [
   {
     name: "Aleksandar Mastilović",
     initials: "AM",
-    photo: aleksandarAsset.url,
+    photo: INSTRUCTOR_PHOTOS.aleksandar,
     role: "Digital Transformation · Regulatory Context",
     assignment: "Regulatory and institutional context",
     bio: "Aleksandar Mastilović is an expert in digital transformation, telecommunications and the development of modern technological ecosystems. His interdisciplinary experience covers the implementation of 5G technologies, telecom market analysis, smart city concept development, and digital transformation projects in public administration and SMEs. Within the NIS2 Officer training, Aleksandar contributes to the understanding of the regulatory, institutional and organizational context of digital security, with a particular focus on the application of European rules, change management, and practical challenges of aligning organizations with new digital resilience requirements.",
@@ -116,7 +119,7 @@ const INSTRUCTORS = [
   {
     name: "Ivan Barać",
     initials: "IB",
-    photo: ivanAsset.url,
+    photo: INSTRUCTOR_PHOTOS.ivan,
     role: "Engineering Development Lead | PULSEC",
     assignment: "Day 2",
     bio: "Ivan Barać is a cybersecurity expert with more than 20 years of experience in the field, acquired through work in large public and private systems and through implementing a wide range of cybersecurity projects. He serves as Engineering Development Lead at PULSEC and as the head of the PULSEC CyberLab internship program, which trains new talent in cybersecurity. Within the company he focuses on engineering career development in the Engineering Division, including education, certification and career guidance. Within the NIS2 Officer training, Ivan leads Day 2, with the task of bringing security controls derived from NIS2 requirements closer to participants and explaining them clearly.",
@@ -124,7 +127,7 @@ const INSTRUCTORS = [
   {
     name: "Nenad Nikolovski",
     initials: "NN",
-    photo: nenadAsset.url,
+    photo: INSTRUCTOR_PHOTOS.nenad,
     role: "IT and Engineering Consultant",
     assignment: "Day 3",
     bio: "Nenad Nikolovski is an IT and engineering consultant with more than 20 years of experience in the IT industry. Throughout his career he has covered different levels of IT management – from technical and operational roles to leading teams and managing complex processes. He has significant experience working with incident response teams and managing real-world incidents, ranging from everyday operational issues to large-scale incidents. Within the NIS2 Officer training, Nenad leads Day 3, dedicated to incident response, operational resilience, business continuity and the practical management of crisis situations.",
@@ -253,7 +256,8 @@ const Curriculum = () => {
                     src={p.photo}
                     alt={p.name}
                     className="w-20 h-20 shrink-0 rounded-full object-cover border-2 border-brand-red/50"
-                    loading="lazy"
+                    loading="eager"
+                    decoding="async"
                   />
                 ) : (
                   <div className="w-20 h-20 shrink-0 rounded-full bg-gradient-to-br from-brand-red/30 to-brand-red/5 border-2 border-brand-red/50 flex items-center justify-center text-2xl font-bold text-white">
