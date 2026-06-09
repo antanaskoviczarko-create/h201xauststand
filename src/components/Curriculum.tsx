@@ -1,8 +1,4 @@
 import { Calendar, Clock, User, BookOpen } from "lucide-react";
-import nikolaPhoto from "@/assets/nikola-budanovic.jpeg.asset.json";
-import aleksandarPhoto from "@/assets/aleksandar-mastilovic.jpg.asset.json";
-import ivanPhoto from "@/assets/ivan-barac.jpg.asset.json";
-import nenadPhoto from "@/assets/nenad-nikolovski.png.asset.json";
 
 type Block = {
   block: string;
@@ -22,10 +18,10 @@ type Day = {
 };
 
 const INSTRUCTOR_PHOTOS = {
-  nikola: nikolaPhoto.url,
-  aleksandar: aleksandarPhoto.url,
-  ivan: ivanPhoto.url,
-  nenad: nenadPhoto.url,
+  nikola: "/instructors/nikola-budanovic.jpeg",
+  aleksandar: "/instructors/aleksandar-mastilovic.jpg",
+  ivan: "/instructors/ivan-barac.jpg",
+  nenad: "/instructors/nenad-nikolovski.png",
 };
 
 const DAYS: Day[] = [
