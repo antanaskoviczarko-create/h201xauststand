@@ -262,9 +262,6 @@ const Curriculum = () => {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/70 to-brand-black/10" />
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center border border-brand-red/50 bg-brand-black/50 text-lg font-bold text-white backdrop-blur-sm">
-                    {p.initials}
-                  </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">{p.name}</h3>
                   <p className="text-brand-red text-sm font-semibold mb-2">{p.role}</p>
                   <p className="text-white/65 text-xs uppercase tracking-wider flex items-center gap-1.5">
