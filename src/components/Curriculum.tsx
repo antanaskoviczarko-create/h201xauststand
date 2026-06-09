@@ -106,6 +106,7 @@ const INSTRUCTORS = [
     photo: INSTRUCTOR_PHOTOS.nikola,
     role: "Program Author",
     assignment: "Day 1 (intro) + Day 4",
+    linkedin: "https://www.linkedin.com/in/nikola-budanovic-budanovicnikola/",
     bio: "Nikola Budanović is the author of the program and one of the leaders of Hub201's educational initiatives in cybersecurity, NIS2 compliance and digital resilience. His experience combines research, communication and strategic work across the cybersecurity ecosystem – from curriculum and program development to cooperation with the public sector, industry and the professional community. Within the NIS2 Officer training, Nikola leads the opening part of Day 1 and the final day of the program, focusing on understanding NIS2 logic, the governance approach, the audit mindset, scenario-based interpretation of questions and preparing participants for the certification exam.",
   },
   {
@@ -114,6 +115,7 @@ const INSTRUCTORS = [
     photo: INSTRUCTOR_PHOTOS.aleksandar,
     role: "Digital Transformation · Regulatory Context",
     assignment: "Regulatory and institutional context",
+    linkedin: "https://www.linkedin.com/in/aleksandarmastilovic/",
     bio: "Aleksandar Mastilović is an expert in digital transformation, telecommunications and the development of modern technological ecosystems. His interdisciplinary experience covers the implementation of 5G technologies, telecom market analysis, smart city concept development, and digital transformation projects in public administration and SMEs. Within the NIS2 Officer training, Aleksandar contributes to the understanding of the regulatory, institutional and organizational context of digital security, with a particular focus on the application of European rules, change management, and practical challenges of aligning organizations with new digital resilience requirements.",
   },
   {
@@ -122,6 +124,7 @@ const INSTRUCTORS = [
     photo: INSTRUCTOR_PHOTOS.ivan,
     role: "Engineering Development Lead | PULSEC",
     assignment: "Day 2",
+    linkedin: "https://www.linkedin.com/in/ivan-bara%C4%87-b6778794/",
     bio: "Ivan Barać is a cybersecurity expert with more than 20 years of experience in the field, acquired through work in large public and private systems and through implementing a wide range of cybersecurity projects. He serves as Engineering Development Lead at PULSEC and as the head of the PULSEC CyberLab internship program, which trains new talent in cybersecurity. Within the company he focuses on engineering career development in the Engineering Division, including education, certification and career guidance. Within the NIS2 Officer training, Ivan leads Day 2, with the task of bringing security controls derived from NIS2 requirements closer to participants and explaining them clearly.",
   },
   {
@@ -130,6 +133,7 @@ const INSTRUCTORS = [
     photo: INSTRUCTOR_PHOTOS.nenad,
     role: "IT and Engineering Consultant",
     assignment: "Day 3",
+    linkedin: "https://www.linkedin.com/in/nenad-nikolovski-53588168/",
     bio: "Nenad Nikolovski is an IT and engineering consultant with more than 20 years of experience in the IT industry. Throughout his career he has covered different levels of IT management – from technical and operational roles to leading teams and managing complex processes. He has significant experience working with incident response teams and managing real-world incidents, ranging from everyday operational issues to large-scale incidents. Within the NIS2 Officer training, Nenad leads Day 3, dedicated to incident response, operational resilience, business continuity and the practical management of crisis situations.",
   },
 ];
@@ -262,7 +266,14 @@ const Curriculum = () => {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/70 to-brand-black/10" />
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">{p.name}</h3>
+                  <a
+                    href={p.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block hover:text-brand-red transition-colors"
+                  >
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 hover:text-brand-red transition-colors">{p.name}</h3>
+                  </a>
                   <p className="text-brand-red text-sm font-semibold mb-2">{p.role}</p>
                   <p className="text-white/65 text-xs uppercase tracking-wider flex items-center gap-1.5">
                     <User className="w-3 h-3" /> {p.assignment}
