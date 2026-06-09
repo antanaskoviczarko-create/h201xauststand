@@ -18,10 +18,10 @@ type Day = {
 };
 
 const INSTRUCTOR_PHOTOS = {
-  nikola: "/__l5e/assets-v1/b5aa61c2-64b7-4910-8d16-0631778c7cdb/nikola-budanovic.jpeg",
-  aleksandar: "/__l5e/assets-v1/1226afda-62d2-4c8c-b47c-f8a178a2dc6a/aleksandar-mastilovic.jpg",
-  ivan: "/__l5e/assets-v1/73f076a2-5c03-4f70-8dea-25e7b94a9490/ivan-barac.jpg",
-  nenad: "/__l5e/assets-v1/bf895a77-4dca-4119-bb0b-45faddb5edf1/nenad-nikolovski.png",
+  nikola: "/instructors/nikola-budanovic.jpeg",
+  aleksandar: "/instructors/aleksandar-mastilovic.jpg",
+  ivan: "/instructors/ivan-barac.jpg",
+  nenad: "/instructors/nenad-nikolovski.png",
 };
 
 const DAYS: Day[] = [
@@ -248,31 +248,33 @@ const Curriculum = () => {
             <div
               key={p.name}
               id={`instructor-${p.initials}`}
-              className="scroll-mt-24 bg-white/[0.03] border border-white/10 rounded-lg p-6 md:p-8 hover:border-brand-red/40 transition-colors"
+              className="scroll-mt-24 bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden hover:border-brand-red/40 transition-colors"
             >
-              <div className="flex items-start gap-5 mb-5">
-                {p.photo ? (
+              <div className="relative min-h-[220px] bg-white/[0.04]">
+                {p.photo && (
                   <img
                     src={p.photo}
                     alt={p.name}
-                    className="w-20 h-20 shrink-0 rounded-full object-cover border-2 border-brand-red/50"
+                    className="absolute inset-0 h-full w-full object-cover grayscale-[15%]"
                     loading="eager"
                     decoding="async"
                   />
-                ) : (
-                  <div className="w-20 h-20 shrink-0 rounded-full bg-gradient-to-br from-brand-red/30 to-brand-red/5 border-2 border-brand-red/50 flex items-center justify-center text-2xl font-bold text-white">
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/70 to-brand-black/10" />
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center border border-brand-red/50 bg-brand-black/50 text-lg font-bold text-white backdrop-blur-sm">
                     {p.initials}
                   </div>
-                )}
-                <div className="min-w-0">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{p.name}</h3>
-                  <p className="text-brand-red text-sm font-semibold mb-1">{p.role}</p>
-                  <p className="text-white/50 text-xs uppercase tracking-wider flex items-center gap-1.5">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">{p.name}</h3>
+                  <p className="text-brand-red text-sm font-semibold mb-2">{p.role}</p>
+                  <p className="text-white/65 text-xs uppercase tracking-wider flex items-center gap-1.5">
                     <User className="w-3 h-3" /> {p.assignment}
                   </p>
                 </div>
               </div>
-              <p className="text-white/70 text-sm leading-relaxed">{p.bio}</p>
+              <div className="p-6 md:p-8">
+                <p className="text-white/70 text-sm leading-relaxed">{p.bio}</p>
+              </div>
             </div>
           ))}
         </div>
