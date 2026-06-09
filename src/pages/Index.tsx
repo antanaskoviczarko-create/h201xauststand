@@ -288,7 +288,7 @@ const Index = () => {
                   </div>
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-red text-white rounded-full text-xs font-bold uppercase tracking-wider">
                     <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                    Only 12 spots
+                    A few seats left
                   </div>
                 </div>
                 <p className="text-base text-brand-red font-bold mt-3 uppercase tracking-wider">Discount for first cohort</p>
