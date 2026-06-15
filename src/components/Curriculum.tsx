@@ -29,8 +29,8 @@ const DAYS: Day[] = [
     num: "DAY 1",
     title: "Governance, regulatory framework and management accountability",
     subtitle: "Why NIS2 changes the way organizations think about cybersecurity",
-    instructor: "Nikola Budanović",
-    initials: "NB",
+    instructor: "Aleksandar Mastilović",
+    initials: "AM",
     blocks: [
       { block: "INTRO", time: "08:30 – 09:00", topic: "Introduction to Day 1", content: "Training objectives; structure of the four-day program; mental framework of the NIS2 Officer role; who is accountable for cybersecurity.", duration: "30 min" },
       { block: "MODULE 1", time: "09:00 – 11:00", topic: "Regulatory framework of the NIS2 Directive", content: "How the EU views cyber risk (WannaCry, NotPetya, SolarWinds); from NIS1 to NIS2 and the three goals of the directive; Directive vs. Regulation, transposition, Serbia and NIS2; CIA triad; Essential vs. Important Entities; sanctions regime up to €10M / 2%; key NIS2 articles.", duration: "120 min" },
