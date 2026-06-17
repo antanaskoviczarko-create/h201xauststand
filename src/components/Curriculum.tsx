@@ -254,12 +254,12 @@ const Curriculum = () => {
               id={`instructor-${p.initials}`}
               className="scroll-mt-24 bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden hover:border-brand-red/40 transition-colors"
             >
-              <div className="bg-white/[0.04] border-b border-white/10">
+              <div className="h-[340px] sm:h-[380px] bg-white/[0.04] border-b border-white/10 flex items-start justify-center overflow-hidden">
                 {p.photo && (
                   <img
                     src={p.photo}
                     alt={p.name}
-                    className="h-auto max-h-[520px] w-full object-contain object-top grayscale-[8%]"
+                    className="h-full w-full object-contain object-top grayscale-[8%]"
                     loading="eager"
                     decoding="async"
                   />
