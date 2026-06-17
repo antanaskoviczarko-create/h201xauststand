@@ -247,14 +247,14 @@ const Curriculum = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-6">
           {INSTRUCTORS.map((p) => (
             <div
               key={p.name}
               id={`instructor-${p.initials}`}
               className="scroll-mt-24 bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden hover:border-brand-red/40 transition-colors"
             >
-              <div className="h-[340px] sm:h-[380px] bg-white/[0.04] border-b border-white/10 flex items-start justify-center overflow-hidden">
+              <div className="h-[420px] sm:h-[520px] lg:h-[380px] bg-white/[0.04] border-b border-white/10 flex items-start justify-center overflow-hidden">
                 {p.photo && (
                   <img
                     src={p.photo}
