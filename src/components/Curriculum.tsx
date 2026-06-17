@@ -18,10 +18,10 @@ type Day = {
 };
 
 const INSTRUCTOR_PHOTOS = {
-  nikola: "/instructors/nikola-budanovic.jpeg",
-  aleksandar: "/instructors/aleksandar-mastilovic.jpg",
-  ivan: "/instructors/ivan-barac.jpg",
-  nenad: "/instructors/nenad-nikolovski.png",
+  nikola: "/__l5e/assets-v1/b6b10c48-6222-4edd-ada8-88464d6e6d3f/nikola-budanovic.jpg",
+  aleksandar: "/__l5e/assets-v1/72ead53e-1c06-4a48-99cf-d860761648bb/aleksandar-mastilovic.jpg",
+  ivan: "/__l5e/assets-v1/cce44c23-39df-413a-9b3f-d822080f3f18/ivan-barac.jpg",
+  nenad: "/__l5e/assets-v1/caa54ac4-750c-4ddb-b8d6-e196df2fdbc9/nenad-nikolovski.jpg",
 };
 
 const DAYS: Day[] = [
