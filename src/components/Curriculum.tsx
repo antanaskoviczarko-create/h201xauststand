@@ -254,33 +254,30 @@ const Curriculum = () => {
               id={`instructor-${p.initials}`}
               className="scroll-mt-24 bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden hover:border-brand-red/40 transition-colors"
             >
-              <div className="relative min-h-[460px] bg-white/[0.04] overflow-hidden">
+              <div className="bg-white/[0.04] border-b border-white/10">
                 {p.photo && (
                   <img
                     src={p.photo}
                     alt={p.name}
-                    className="absolute inset-0 h-full w-full object-contain object-top grayscale-[8%]"
+                    className="h-auto max-h-[520px] w-full object-contain object-top grayscale-[8%]"
                     loading="eager"
                     decoding="async"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/45 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <a
-                    href={p.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block hover:text-brand-red transition-colors"
-                  >
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 hover:text-brand-red transition-colors">{p.name}</h3>
-                  </a>
-                  <p className="text-brand-red text-sm font-semibold mb-2">{p.role}</p>
-                  <p className="text-white/65 text-xs uppercase tracking-wider flex items-center gap-1.5">
-                    <User className="w-3 h-3" /> {p.assignment}
-                  </p>
-                </div>
               </div>
               <div className="p-6 md:p-8">
+                <a
+                  href={p.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block hover:text-brand-red transition-colors"
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 hover:text-brand-red transition-colors">{p.name}</h3>
+                </a>
+                <p className="text-brand-red text-sm font-semibold mb-2">{p.role}</p>
+                <p className="text-white/65 text-xs uppercase tracking-wider flex items-center gap-1.5 mb-6">
+                  <User className="w-3 h-3" /> {p.assignment}
+                </p>
                 <p className="text-white/70 text-sm leading-relaxed">{p.bio}</p>
               </div>
             </div>
