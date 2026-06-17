@@ -254,17 +254,17 @@ const Curriculum = () => {
               id={`instructor-${p.initials}`}
               className="scroll-mt-24 bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden hover:border-brand-red/40 transition-colors"
             >
-              <div className="relative aspect-[4/5] sm:aspect-[3/4] bg-white/[0.04]">
+              <div className="relative min-h-[460px] bg-white/[0.04] overflow-hidden">
                 {p.photo && (
                   <img
                     src={p.photo}
                     alt={p.name}
-                    className="absolute inset-0 h-full w-full object-cover object-[center_15%] grayscale-[15%]"
+                    className="absolute inset-0 h-full w-full object-contain object-top grayscale-[8%]"
                     loading="eager"
                     decoding="async"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/70 to-brand-black/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/45 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                   <a
                     href={p.linkedin}
