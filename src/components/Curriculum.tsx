@@ -247,19 +247,19 @@ const Curriculum = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 items-start">
           {INSTRUCTORS.map((p) => (
             <div
               key={p.name}
               id={`instructor-${p.initials}`}
               className="scroll-mt-24 bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden hover:border-brand-red/40 transition-colors"
             >
-              <div className="aspect-[4/5] bg-white/90 border-b border-white/10 overflow-hidden">
+              <div className="aspect-square bg-white/90 border-b border-white/10 overflow-hidden">
                 {p.photo && (
                   <img
                     src={p.photo}
                     alt={p.name}
-                    className="h-full w-full object-cover object-[center_22%]"
+                    className="h-full w-full object-contain object-center"
                     loading="eager"
                     decoding="async"
                   />
