@@ -25,6 +25,7 @@ import hub201Logo from "@/assets/hub201-logo.png";
 import austrianStandardsLogo from "@/assets/austrian-standards-logo.svg";
 import ApplyForm from "@/components/ApplyForm";
 import Curriculum from "@/components/Curriculum";
+import PhotoCacheCheck from "@/components/PhotoCacheCheck";
 
 const AUSTRIAN_STANDARDS_URL =
   "https://www.austrian-standards.at/en/products-solutions/apply-standards/certification/personal-certification/nis2-officer";
@@ -32,6 +33,7 @@ const AUSTRIAN_STANDARDS_URL =
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <PhotoCacheCheck />
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-50 bg-brand-black/80 backdrop-blur-md border-b border-white/10">
         <div className="container flex items-center justify-between h-16">
