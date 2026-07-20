@@ -1,4 +1,5 @@
-import { Calendar, Clock, User, BookOpen } from "lucide-react";
+import { Calendar, Clock, User, BookOpen, ImageOff } from "lucide-react";
+import { useState } from "react";
 
 type Block = {
   block: string;
@@ -143,6 +144,58 @@ const INSTRUCTORS = [
   },
 ];
 
+type InstructorPhotoProps = {
+  src: string;
+  name: string;
+  initials: string;
+};
+
+const InstructorPhoto = ({ src, name, initials }: InstructorPhotoProps) => {
+  const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading");
+
+  return (
+    <div className="relative aspect-[3/4] bg-neutral-900 border-b border-white/10 overflow-hidden">
+      {/* Skeleton shimmer while loading */}
+      {status === "loading" && (
+        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-white/[0.04] via-white/[0.08] to-white/[0.03]">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 font-bold text-xl">
+              {initials}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Error fallback */}
+      {status === "error" && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center gap-3 p-6 bg-neutral-900">
+          <div className="w-20 h-20 rounded-full bg-brand-red/15 border border-brand-red/40 flex items-center justify-center text-brand-red font-bold text-xl">
+            {initials}
+          </div>
+          <div className="flex items-center gap-1.5 text-xs text-white/50">
+            <ImageOff className="w-3.5 h-3.5" />
+            <span>Photo unavailable</span>
+          </div>
+          <div className="text-[10px] text-white/40">{name}</div>
+        </div>
+      )}
+
+      <img
+        src={src}
+        alt={name}
+        className={`h-full w-full object-cover transition-opacity duration-500 ${
+          status === "loaded" ? "opacity-100" : "opacity-0"
+        }`}
+        style={{ objectPosition: "center" }}
+        loading="eager"
+        decoding="async"
+        onLoad={() => setStatus("loaded")}
+        onError={() => setStatus("error")}
+      />
+    </div>
+  );
+};
+
 const Curriculum = () => {
   return (
     <section id="curriculum" className="py-24 bg-brand-black text-white relative overflow-hidden">
@@ -259,18 +312,15 @@ const Curriculum = () => {
               id={`instructor-${p.initials}`}
               className="scroll-mt-24 bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden hover:border-brand-red/40 transition-colors"
             >
-              <div className="aspect-[3/4] bg-neutral-900 border-b border-white/10 overflow-hidden">
-                {p.photo && (
-                  <img
-                    src={p.photo}
-                    alt={p.name}
-                    className="h-full w-full object-cover"
-                    style={{ objectPosition: "center" }}
-                    loading="eager"
-                    decoding="async"
-                  />
-                )}
-              </div>
+              {p.photo ? (
+                <InstructorPhoto src={p.photo} name={p.name} initials={p.initials} />
+              ) : (
+                <div className="aspect-[3/4] bg-neutral-900 border-b border-white/10 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-full bg-brand-red/15 border border-brand-red/40 flex items-center justify-center text-brand-red font-bold text-xl">
+                    {p.initials}
+                  </div>
+                </div>
+              )}
               <div className="p-6 md:p-8">
                 <a
                   href={p.linkedin}
