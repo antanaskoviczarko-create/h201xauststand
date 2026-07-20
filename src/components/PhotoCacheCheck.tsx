@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
 // Instructor photo URLs (kept in sync with Curriculum.tsx).
-// Bump PHOTO_VERSION in Curriculum.tsx AND here after re-uploading images.
-const PHOTO_VERSION = "2026-07-20";
+// Bump PHOTO_VERSION in Curriculum.tsx AND here after replacing images.
+const PHOTO_VERSION = "2026-07-20-static";
 const PHOTOS: { name: string; url: string }[] = [
-  { name: "Nikola Budanović", url: "/__l5e/assets-v1/b6b10c48-6222-4edd-ada8-88464d6e6d3f/nikola-budanovic.jpg" },
-  { name: "Aleksandar Mastilović", url: "/__l5e/assets-v1/72ead53e-1c06-4a48-99cf-d860761648bb/aleksandar-mastilovic.jpg" },
-  { name: "Ivan Barać", url: "/__l5e/assets-v1/cce44c23-39df-413a-9b3f-d822080f3f18/ivan-barac.jpg" },
-  { name: "Nenad Nikolovski", url: "/__l5e/assets-v1/caa54ac4-750c-4ddb-b8d6-e196df2fdbc9/nenad-nikolovski.jpg" },
+  { name: "Nikola Budanović", url: "/instructors/nikola-budanovic.webp" },
+  { name: "Aleksandar Mastilović", url: "/instructors/aleksandar-mastilovic.webp" },
+  { name: "Ivan Barać", url: "/instructors/ivan-barac.webp" },
+  { name: "Nenad Nikolovski", url: "/instructors/nenad-nikolovski.webp" },
 ];
 
 type Row = {
