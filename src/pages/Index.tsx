@@ -82,6 +82,15 @@ const Index = () => {
           </p>
 
           <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-3 px-4 py-2 mb-6 rounded-full bg-brand-red/15 border border-brand-red/50 backdrop-blur">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>
+              </span>
+              <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-white">
+                Next cohort: October 2026
+              </span>
+            </div>
              <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.05] mb-6">
                Training Program for
                <br />
@@ -96,13 +105,13 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
               <Button variant="hero" size="xl" asChild>
-                <a href="#apply">
-                  Apply for the next cohort
+                <a href="mailto:nis2@hub-201.com?subject=APPLICATION%20-%20NIS2%20Officer%20Program%20(October%202026%20cohort)&body=Hello%20Hub201%20team%2C%0A%0AI%20would%20like%20to%20apply%20for%20the%20next%20NIS2%20Officer%20cohort%20(October%202026).%0A%0AName%3A%0ACompany%3A%0ARole%3A%0APhone%3A%0A%0AThank%20you.">
+                  Join now
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <a href="mailto:nis2@hub-201.com?subject=QUESTION%20about%20program">Request program details</a>
+                <a href="mailto:nis2@hub-201.com?subject=MEETING%20REQUEST%20-%20NIS2%20Officer%20Program&body=Hello%20Hub201%20team%2C%0A%0AI%20would%20like%20to%20schedule%20a%20meeting%20to%20learn%20more%20about%20the%20NIS2%20Officer%20training%20program%20and%20the%20October%202026%20cohort.%0A%0APreferred%20dates%2Ftimes%3A%0AName%3A%0ACompany%3A%0A%0AThank%20you.">Find out more</a>
               </Button>
             </div>
 
