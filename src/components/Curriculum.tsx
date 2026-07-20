@@ -1,5 +1,5 @@
 import { Calendar, Clock, User, BookOpen, ImageOff } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Block = {
   block: string;
@@ -148,13 +148,44 @@ type InstructorPhotoProps = {
   src: string;
   name: string;
   initials: string;
+  priority?: boolean;
 };
 
-const InstructorPhoto = ({ src, name, initials }: InstructorPhotoProps) => {
+const InstructorPhoto = ({ src, name, initials, priority = false }: InstructorPhotoProps) => {
   const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading");
+  const [inView, setInView] = useState<boolean>(priority);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // Lazy-load non-priority photos via IntersectionObserver so skeletons
+  // stay only until the card is actually near the viewport.
+  useEffect(() => {
+    if (priority || inView) return;
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setInView(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setInView(true);
+            io.disconnect();
+            break;
+          }
+        }
+      },
+      { rootMargin: "400px 0px", threshold: 0.01 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [priority, inView]);
 
   return (
-    <div className="relative aspect-[3/4] bg-neutral-900 border-b border-white/10 overflow-hidden">
+    <div
+      ref={containerRef}
+      className="relative aspect-[3/4] bg-neutral-900 border-b border-white/10 overflow-hidden"
+    >
       {/* Skeleton shimmer while loading */}
       {status === "loading" && (
         <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-white/[0.04] via-white/[0.08] to-white/[0.03]">
@@ -180,23 +211,46 @@ const InstructorPhoto = ({ src, name, initials }: InstructorPhotoProps) => {
         </div>
       )}
 
-      <img
-        src={src}
-        alt={name}
-        className={`h-full w-full object-cover transition-opacity duration-500 ${
-          status === "loaded" ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ objectPosition: "center" }}
-        loading="eager"
-        decoding="async"
-        onLoad={() => setStatus("loaded")}
-        onError={() => setStatus("error")}
-      />
+      {inView && (
+        <img
+          src={src}
+          alt={name}
+          className={`h-full w-full object-cover transition-opacity duration-500 ${
+            status === "loaded" ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ objectPosition: "center" }}
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
+          // @ts-expect-error fetchpriority is a valid HTML attribute not yet in React types
+          fetchpriority={priority ? "high" : "auto"}
+          onLoad={() => setStatus("loaded")}
+          onError={() => setStatus("error")}
+        />
+      )}
     </div>
   );
 };
 
 const Curriculum = () => {
+  // Discreet preload for the first two instructor portraits so they are
+  // ready by the time the user scrolls into the lecturers block.
+  useEffect(() => {
+    const preloadUrls = [INSTRUCTOR_PHOTOS.nikola, INSTRUCTOR_PHOTOS.aleksandar];
+    const links: HTMLLinkElement[] = preloadUrls.map((href) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = href;
+      // @ts-expect-error fetchPriority is valid on HTMLLinkElement
+      link.fetchPriority = "low";
+      document.head.appendChild(link);
+      return link;
+    });
+    return () => {
+      links.forEach((l) => l.parentNode?.removeChild(l));
+    };
+  }, []);
+
   return (
     <section id="curriculum" className="py-24 bg-brand-black text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-radial-red pointer-events-none opacity-50" />
@@ -306,14 +360,19 @@ const Curriculum = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 items-start">
-          {INSTRUCTORS.map((p) => (
+          {INSTRUCTORS.map((p, idx) => (
             <div
               key={p.name}
               id={`instructor-${p.initials}`}
               className="scroll-mt-24 bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden hover:border-brand-red/40 transition-colors"
             >
               {p.photo ? (
-                <InstructorPhoto src={p.photo} name={p.name} initials={p.initials} />
+                <InstructorPhoto
+                  src={p.photo}
+                  name={p.name}
+                  initials={p.initials}
+                  priority={idx < 2}
+                />
               ) : (
                 <div className="aspect-[3/4] bg-neutral-900 border-b border-white/10 flex items-center justify-center">
                   <div className="w-20 h-20 rounded-full bg-brand-red/15 border border-brand-red/40 flex items-center justify-center text-brand-red font-bold text-xl">
