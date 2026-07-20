@@ -241,8 +241,7 @@ const Curriculum = () => {
       link.rel = "preload";
       link.as = "image";
       link.href = href;
-      // @ts-expect-error fetchPriority is valid on HTMLLinkElement
-      link.fetchPriority = "low";
+      (link as HTMLLinkElement & { fetchPriority?: string }).fetchPriority = "low";
       document.head.appendChild(link);
       return link;
     });
