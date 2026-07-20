@@ -221,8 +221,7 @@ const InstructorPhoto = ({ src, name, initials, priority = false }: InstructorPh
           style={{ objectPosition: "center" }}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
-          // @ts-expect-error fetchpriority is a valid HTML attribute not yet in React types
-          fetchpriority={priority ? "high" : "auto"}
+          {...({ fetchpriority: priority ? "high" : "auto" } as { fetchpriority?: string })}
           onLoad={() => setStatus("loaded")}
           onError={() => setStatus("error")}
         />
