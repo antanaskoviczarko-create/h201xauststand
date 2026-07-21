@@ -90,10 +90,12 @@
   },
   "overrides": {
     "js-yaml": "^4.3.0",
-    "esbuild": "^0.28.1"
+    "esbuild": "^0.28.1",
+    "picomatch": "^2.3.2"
   },
   "resolutions": {
     "js-yaml": "^4.3.0",
-    "esbuild": "^0.28.1"
+    "esbuild": "^0.28.1",
+    "picomatch": "^2.3.2"
   }
 }
