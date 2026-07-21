@@ -151,6 +151,7 @@ export const ApplyForm = () => {
       heardFrom: [],
       referralName: "",
       heardFromOther: "",
+      website: "",
     });
   };
 
