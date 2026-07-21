@@ -33,7 +33,7 @@ const AUSTRIAN_STANDARDS_URL =
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <PhotoCacheCheck />
+      {import.meta.env.DEV && <PhotoCacheCheck />}
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-50 bg-brand-black/80 backdrop-blur-md border-b border-white/10">
         <div className="container flex items-center justify-between h-16">
