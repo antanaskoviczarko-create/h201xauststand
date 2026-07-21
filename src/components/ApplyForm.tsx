@@ -69,6 +69,7 @@ export const ApplyForm = () => {
     heardFrom: [] as string[],
     referralName: "",
     heardFromOther: "",
+    website: "", // honeypot — must stay empty
   });
 
   const update = (key: keyof typeof form, value: string) => {
@@ -89,6 +90,12 @@ export const ApplyForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
+
+    // Honeypot: bots fill hidden fields. Silently no-op with success UI.
+    if (form.website.trim() !== "") {
+      setSubmitted(true);
+      return;
+    }
 
     const parsed = applicationSchema.safeParse(form);
     if (!parsed.success) {
