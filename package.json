@@ -89,9 +89,11 @@
     "vitest": "^3.2.4"
   },
   "overrides": {
-    "js-yaml": "^4.3.0"
+    "js-yaml": "^4.3.0",
+    "esbuild": "^0.28.1"
   },
   "resolutions": {
-    "js-yaml": "^4.3.0"
+    "js-yaml": "^4.3.0",
+    "esbuild": "^0.28.1"
   }
 }
