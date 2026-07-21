@@ -179,6 +179,19 @@ export const ApplyForm = () => {
       noValidate
       className="bg-white/5 backdrop-blur border border-white/15 rounded-lg p-6 md:p-10 text-left space-y-6"
     >
+      {/* Honeypot: hidden from users, catches bots */}
+      <div aria-hidden="true" className="absolute left-[-9999px] w-px h-px overflow-hidden" style={{ position: "absolute" }}>
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website}
+          onChange={(e) => setForm((prev) => ({ ...prev, website: e.target.value }))}
+        />
+      </div>
       <div className="grid sm:grid-cols-2 gap-5">
         <div className="space-y-2">
           <Label htmlFor="name" className="text-white">Full name</Label>
